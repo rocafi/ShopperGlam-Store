@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% import "utils/macros/input.html" as macro %}
+{% set mainComponent = "utils/components/" %}
+
+{% block title %}
+    Registro
+{% endblock %}
+
+{% block main %}
+
+    {% include mainComponent + "header.html" %}
+
+    <h1>Registro</h1>
+    
+    <form class="form auth-user" action="/register" method="post">
+    
+        {{ macro.inputSimple('Nombre', 'name', 'tel', 'ej. Jhon Doe', 'required', 'autofocus') }}    
+
+        {{ macro.inputSimple('Correo', 'email', 'email', 'ej. jhondoe@gmail.com', 'required')}}
+    
+        {{ macro.inputSimple('Contraseña', 'password', 'password', '********', 'required') }}
+        
+        <span class="account">Tienes una cuenta? <a href="/login">Inicia sesión</a></span>
+
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="show-message alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        <button id="btn_register">Enviar</button>
+    
+    </form>
+
+    <style>
+        h1{
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem;
+        }
+        form{
+            width: 60%;
+            margin: 0 auto;
+            button{
+                width: 100%;
+                padding: 1rem;
+                background-color: #f00;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: .3s;
+                &:hover{
+                    background-color: #f55;
+                }
+            }
+        }
+    </style>
+
+{% endblock %}

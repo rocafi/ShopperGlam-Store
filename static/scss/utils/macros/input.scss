@@ -1,0 +1,21 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    width: 100%;
+    margin: 1rem 0;
+
+    span{
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    input{
+        padding: 0.4rem 1rem;
+        border: 1px solid #000;
+        &::placeholder{
+            color: #a0a0a0;
+            font-style: italic;
+        }
+    }
+}

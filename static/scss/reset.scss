@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+input[type=file] {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// #############################################################################################
+
+.required{
+  color: red;
+  display: inline-block !important;
+  font-weight: 700;
+}

@@ -1,0 +1,9 @@
+{% macro inputSimple(label, name, type, placeholder, required, extra) %}
+    <label class="inputSimple input" for="{{ name }}" id="lbl-{{ name }}">
+        <span>
+            {{ label }} 
+            <i class="{{ required }}" style="display: none;">*</i>
+        </span>
+        <input type="{{ type }}" name="{{ name }}" id="{{ name }}" placeholder="{{ placeholder }}" {{ required }} {{ extra }} />
+    </label>
+{% endmacro %}

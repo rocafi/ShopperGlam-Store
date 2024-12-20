@@ -18,23 +18,28 @@ Session(app)
     # RUTAS PRINCIPALES
 ##################################################################################################################
 
+# !------------
 @app.route('/')
 def index():
-    return render_template('general/index.html')
+    return render_template('index.html')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    return render_template('general/login.html')
-
-
+# TODO:----------------------------------------------
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     # SI EL METODO ES POST
     if request.method == 'POST':
-            return redirect(url_for('register'))
+        flash('Usuario registrado correctamente', 'success')
+        return redirect(url_for('register'))
     # SI EL METODO ES GET
     if request.method == 'GET':
-        return render_template('general/register.html')
+        return render_template('auth/register.html')
+    
+# !------------------------------------------
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('auth/login.html')
+
+
 
 
 
