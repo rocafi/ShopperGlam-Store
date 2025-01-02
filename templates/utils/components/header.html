@@ -7,17 +7,15 @@
     </a>
 
     <nav class="main-nav">
-        <!-- {{ macro.nav_link("/profile", "user", "Perfil") }} -->
 
-        {{ macro.nav_link("profile", "", "Perfil") }}
         {{ macro.nav_link("/", "", "Inicio") }}
-        {{ macro.nav_link("catalog", "", "Catálogo") }}
-
-        <!-- {{ macro.nav_link("/logout", "login", "Cerrar sesión") }} -->
-        {{ macro.nav_link(context.current_page.route, "", context.current_page.text) }}
-
         {% if context.current_page.route == 'logout' %}
+            {{ macro.nav_link("profile", "", "Perfil") }}
         {% endif %}
+        {{ macro.nav_link("catalog", "", "Catálogo") }}
+        
+        {{ macro.nav_link(context.current_page.route, "", context.current_page.text) }}
+        
     </nav>
 </header>
 

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask, flash, render_template, session, redirect, url_for, request
 from flask_session import Session
 from functools import wraps
+from flask import make_response
 
 from src.entities.auth import *
 
@@ -25,6 +26,15 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+def no_cache(view):
+    def wrapped_view(*args, **kwargs):
+        response = make_response(view(*args, **kwargs))
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+        return response
+    return wrapped_view
 
 ##################################################################################################################
     # RUTA INICIAL
@@ -83,16 +93,11 @@ def login():
         res = obtainUserData(email)
         session['user_id'] = res['user'].user_id
         session['username'] = res['user'].username
-        session['email'] = res['user'].email
-        session['phone'] = res['user'].phone
-        session['id_card'] = res['user'].id_card
-        session['status'] = res['user'].status
-        session['image'] = res['user'].image
         session['user_role'] = res['user'].user_role
         session['permissions'] = res['permissions']
 
         print(session)
-        return redirect(url_for('login'))
+        return redirect(url_for('catalog'))
     
     # SI EL METODO ES GET
     if request.method == 'GET':
@@ -117,6 +122,7 @@ def catalog():
 # perfil
 @app.route('/profile')
 @login_required
+@no_cache
 def profile():
     context = {
         'current_page': currentPage('logout')
@@ -125,13 +131,24 @@ def profile():
     print(session)
     return render_template('catalog/profile.html', context=context)
 
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
+##################################################################################################################
+    # FUNCIONES DE UTILIDAD
+##################################################################################################################
+
 def currentPage(route):
-    if route == 'login':
-        return {'route': 'login','text': 'Iniciar sesion'}
-    if route == 'register':
-        return {'route': 'register','text': 'Registrarse'}
-    if route == "logout":
-        return {'route': 'logout','text': 'Cerrar sesion'}
+    routes = {
+        'login': {'route': 'login', 'text': 'Iniciar sesion'},
+        'register': {'route': 'register', 'text': 'Registrarse'},
+        'logout': {'route': 'logout', 'text': 'Cerrar sesion'}
+    }
+    return routes.get(route)
 
 
 if __name__ == '__main__':
