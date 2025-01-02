@@ -86,6 +86,22 @@ html {
   font-weight: 700;
 }
 
+.alert-error {
+  border: 1px solid rgb(152, 2, 2);
+  color: #fff;
+  background-color: rgb(250, 75, 75);
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.alert-register {
+  border: 1px solid rgb(2, 152, 27);
+  color: #fff;
+  background-color: rgb(75, 250, 157);
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
 .input {
   display: flex;
   flex-direction: column;

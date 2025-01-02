@@ -13,8 +13,7 @@
         {{ macro.nav_link("catalog", "", "Catálogo") }}
 
         <!-- {{ macro.nav_link("/logout", "login", "Cerrar sesión") }} -->
-        {{ macro.nav_link("login", "", "Iniciar sesión") }}
-        {{ macro.nav_link("register", "", "Registrarse") }}
+        {{ macro.nav_link(context.current_page.route, "", context.current_page.text) }}
     </nav>
 </header>
 
