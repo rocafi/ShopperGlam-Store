@@ -21,7 +21,7 @@ Session(app)
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if session.get("id_user") is None:
+        if session.get("user_id") is None:
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
@@ -33,9 +33,8 @@ def login_required(f):
 # !------------
 @app.route('/')
 def index():
-    current_page = {'route': 'login','text': 'Iniciar sesion'}
     context = {
-        'current_page': current_page
+        'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
     return render_template('index.html', context=context)
 
@@ -62,9 +61,8 @@ def registerClient():
     
     # SI EL METODO ES GET
     if request.method == 'GET':
-        current_page = {'route': 'login','text': 'Iniciar sesion'}
         context = {
-            'current_page': current_page
+            'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
         }
         print(session)
         return render_template('auth/register.html', context=context)
@@ -98,9 +96,8 @@ def login():
     
     # SI EL METODO ES GET
     if request.method == 'GET':
-        current_page = {'route': 'register','text': 'Registrarse'}
         context = {
-            'current_page': current_page
+            'current_page': currentPage('logout') if session.get('user_id') else currentPage('register')
         }
         print(session)
         return render_template('auth/login.html', context=context)
@@ -111,9 +108,8 @@ def login():
 
 @app.route('/catalog')
 def catalog():
-    current_page = {'route': 'login','text': 'Iniciar sesion'}
     context = {
-        'current_page': current_page
+        'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
     print(session)
     return render_template('catalog/catalog.html', context=context)
@@ -122,12 +118,20 @@ def catalog():
 @app.route('/profile')
 @login_required
 def profile():
-    current_page = {'route': 'login','text': 'Iniciar sesion'}
     context = {
-        'current_page': current_page
+        'current_page': currentPage('logout')
     }
+    
     print(session)
     return render_template('catalog/profile.html', context=context)
+
+def currentPage(route):
+    if route == 'login':
+        return {'route': 'login','text': 'Iniciar sesion'}
+    if route == 'register':
+        return {'route': 'register','text': 'Registrarse'}
+    if route == "logout":
+        return {'route': 'logout','text': 'Cerrar sesion'}
 
 
 if __name__ == '__main__':
