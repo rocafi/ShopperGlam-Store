@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, flash, render_template, session, redirect, url_for, request
 from flask_session import Session
+from functools import wraps
 
 from src.entities.auth import *
 
@@ -17,14 +18,30 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get("id_user") is None:
+            return redirect("/login")
+        return f(*args, **kwargs)
+    return decorated_function
+
 ##################################################################################################################
-    # RUTAS PRINCIPALES
+    # RUTA INICIAL
 ##################################################################################################################
 
 # !------------
 @app.route('/')
 def index():
-    return render_template('index.html')
+    current_page = {'route': 'login','text': 'Iniciar sesion'}
+    context = {
+        'current_page': current_page
+    }
+    return render_template('index.html', context=context)
+
+##################################################################################################################
+    # RUTAS DE REGISTRO E INICIO DE SESION
+##################################################################################################################
 
 # TODO:----------------------------------------------
 @app.route('/register', methods=['GET', 'POST'])
@@ -88,8 +105,29 @@ def login():
         print(session)
         return render_template('auth/login.html', context=context)
 
+##################################################################################################################
+    # RUTAS DEL CATALOGO
+##################################################################################################################
 
+@app.route('/catalog')
+def catalog():
+    current_page = {'route': 'login','text': 'Iniciar sesion'}
+    context = {
+        'current_page': current_page
+    }
+    print(session)
+    return render_template('catalog/catalog.html', context=context)
 
+# perfil
+@app.route('/profile')
+@login_required
+def profile():
+    current_page = {'route': 'login','text': 'Iniciar sesion'}
+    context = {
+        'current_page': current_page
+    }
+    print(session)
+    return render_template('catalog/profile.html', context=context)
 
 
 if __name__ == '__main__':
