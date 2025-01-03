@@ -1,0 +1,39 @@
+// generales
+// $PINK: #ff776b;
+$PINK: #FFA69E;
+$YELLOW: #FAF3DD;
+$LIGHT-BLUE: #B8F2E6;
+$BLUE: #AED9E0;
+$DARK-BLUE: #5E6472;
+
+$MAIN: darken($PINK, 5%);
+$SECONDARY: darken($BLUE, 5%);
+
+// cabecera y menu de catalogo
+$navbar-background: #FFF;
+$navbar-text: $MAIN;
+// cover
+$cover-background: $DARK-BLUE;
+$cover-title: $MAIN;
+$cover-text: #fff;
+$btnview: $MAIN;
+$btnview-hover: $SECONDARY;
+$btnview-text: #fff;
+$figures: $MAIN;
+
+// card
+$card-img: $YELLOW;
+$card-text: darken($MAIN, 10%);
+$card-btn: $YELLOW;
+
+// ---------------------------------------------------------------
+// ESTILOS DEL SISTEMA PRINCIPAL
+// ---------------------------------------------------------------
+
+// navbar
+$Snavbar-background: darken($DARK-BLUE, 20%);
+$Snavbar-color: $YELLOW;
+
+// header
+$header-background: #efefef;
+$header-text: $DARK-BLUE;
