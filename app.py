@@ -139,6 +139,50 @@ def logout():
     return redirect("/")
 
 ##################################################################################################################
+    # RUTAS DEL SISTEMA
+##################################################################################################################
+
+@app.route('/home')
+def home():
+    return 'Home'
+
+@app.route('/dashboards')
+def dashboard():
+    return 'Dashboard'
+
+@app.route('/operators')
+def operators():
+    return 'Operators'
+
+@app.route('/providers')
+def providers():
+    return 'Providers'
+
+@app.route('/sells')
+def sells():
+    return 'Sells'
+
+@app.route('/returns')
+def returns():
+    return 'Returns'
+
+@app.route('/reservations')
+def reservations():
+    return 'Reservations'
+
+@app.route('/buys')
+def buys():
+    return 'Buys'
+
+@app.route('/products')
+def products():
+    return 'Products'
+
+@app.route('/configurations')
+def configurations():
+    return 'Configurations'
+
+##################################################################################################################
     # FUNCIONES DE UTILIDAD
 ##################################################################################################################
 
