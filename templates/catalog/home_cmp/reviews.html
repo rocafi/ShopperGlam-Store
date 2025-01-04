@@ -1,0 +1,74 @@
+{% import "catalog/macros/separator.html" as macro %}
+
+<section class="main-reviews">
+    {{ macro.separator("Reviews") }}
+</section>
+
+<section class="reviews-section">
+    <h2>Reseñas de nuestros clientes</h2>
+    <div class="reviews-container">
+        <div class="review">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Me encanta comprar en Shopper Glam. Los productos son de altísima calidad y siempre encuentro lo que busco. Además, el personal es increíblemente amable y siempre está dispuesto a ayudarme a elegir lo mejor según mis necesidades. Definitivamente, es mi tienda favorita para ropa y accesorios."</p>
+            <p class="review-author">— Ana María L.</p>
+        </div>
+
+        <div class="review">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Descubrí Shopper Glam hace unos meses y no puedo estar más feliz. Tienen una gran variedad de productos, desde ropa moderna hasta accesorios únicos. Los precios son muy accesibles, y siempre tienen promociones interesantes. Sin duda, la recomiendo a todos mis amigos."</p>
+            <p class="review-author">— Carlos G.</p>
+        </div>
+
+        <div class="review">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Cada vez que visito Shopper Glam, salgo más que satisfecha. La atención al cliente es espectacular: siempre me atienden con una sonrisa y me ayudan a encontrar justo lo que necesito. Además, los precios son justos y los productos, de calidad premium. ¡Es un lugar donde realmente disfruto comprar!"</p>
+            <p class="review-author">— Lucía P.</p>
+        </div>
+    </div>
+</section>
+<style>
+    .reviews-section {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .reviews-section h2 {
+        text-align: center;
+        color: #444;
+    }
+
+    .reviews-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .review {
+        flex: 1;
+        padding: 15px;
+        background: #fdfdfd;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-stars {
+        color: #f39c12;
+        font-size: 1rem;
+    }
+
+    .review-text {
+        margin: 10px 0;
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .review-author {
+        font-weight: bold;
+        color: #666;
+    }
+</style>
