@@ -54,7 +54,7 @@ def no_cache(view):
 # !------------
 @app.route('/')
 def index():
-    if session.get('user_id'):
+    if session.get('user_role') == 'Administrador' or session.get('user_role') == 'Operador':
         return abort(403)
     context = {
         'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
@@ -120,8 +120,8 @@ def login():
     
     # SI EL METODO ES GET
     if request.method == 'GET':
-        if session.get('user_id'):
-            return redirect(url_for('catalog'))
+        if session.get('user_role') == 'Administrador' or session.get('user_role') == 'Operador':
+            return abort(403)
         
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('register')
@@ -135,7 +135,8 @@ def login():
 
 @app.route('/catalog')
 def catalog():
-    
+    if session.get('user_role') == 'Administrador' or session.get('user_role') == 'Operador':
+        return abort(403)
     context = {
         'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
@@ -147,7 +148,7 @@ def catalog():
 @login_required(["Cliente"])
 @no_cache
 def profile():
-    if session.get('user_id'):
+    if session.get('user_role') == 'Administrador' or session.get('user_role') == 'Operador':
         return abort(403)
     context = {
         'current_page': currentPage('logout')
@@ -170,11 +171,14 @@ def logout():
 @app.route('/home')
 @login_required(["Operador"])
 def home():
-    return 'Home'
+    return '''
+<h1>Home</h1>
+<a href="/logout">salir</a>
+'''
 
 @app.route('/dashboards')
 def dashboard():
-    return 'Dashboard'
+    return '<h1>Dashboard</h1>'
 
 @app.route('/operators')
 def operators():
