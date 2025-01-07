@@ -169,12 +169,9 @@ def logout():
 ##################################################################################################################
 
 @app.route('/home')
-@login_required(["Operador"])
+# @login_required(["Operador"])
 def home():
-    return '''
-<h1>Home</h1>
-<a href="/logout">salir</a>
-'''
+    return render_template('system/index.html')
 
 @app.route('/dashboards')
 def dashboard():
