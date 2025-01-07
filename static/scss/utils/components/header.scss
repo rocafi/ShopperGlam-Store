@@ -1,39 +1,37 @@
 @use "/static/scss/variables.scss" as *;
 
+$navbar-background: #fff;
+$navbar-text: $primary;
+
 .main-header {
     position: sticky;
-    width: 100%;
-    height: 15vh;
+    height: 12vh;
     top: 0;
     background-color: $navbar-background;
     color: $navbar-text;
-    border-top: 1.5rem solid $MAIN;
-    border-bottom: 1px solid $MAIN;
+    border-top: 1rem solid $primary;
+    border-bottom: 1px solid $primary;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    z-index: 1000;
+    z-index: 10;
 
     .logo {
-        font-size: 1.5em;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: darken($BLUE, 10%);
         display: flex;
-        border: 2px solid $SECONDARY;
-        .first {
+        border: 2px solid $secondary;
+        .left-side {
             font-size: 1.5rem;
             font-weight: 700;
             color: #fff;
-            background-color: $SECONDARY;
+            background-color: $secondary;
             padding: 0 .4rem;
         }
-        .second {
+        .right-side {
             font-size: 1.5rem;
             font-weight: 500;
             font-family: 'Times New Roman', Times, serif;
-            color: $MAIN;
+            color: $primary;
             padding: 0 .4rem;
         }
       }
@@ -52,18 +50,19 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-size: 1rem;
             &:hover {
-                background-color: $SECONDARY;
+                background-color: $secondary;
                 color: #fff;
             }
             
             i {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
         }
         .session {
             // border: 1px solid $SECONDARY;
-            background-color: $MAIN;
+            background-color: $primary;
             color: #fff;
           }
       }

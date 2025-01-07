@@ -1,39 +1,76 @@
 // generales
-// $PINK: #ff776b;
-$PINK: #FFA69E;
-$YELLOW: #FAF3DD;
-$LIGHT-BLUE: #B8F2E6;
-$BLUE: #AED9E0;
-$DARK-BLUE: #5E6472;
+$PINK: #ffa69e;
+$YELLOW: #faf4de;
+$LIGHT-BLUE: #b8f2e6;
+$BLUE: #aed9e0;
+$DARK-BLUE: #5e6472;
 
-$MAIN: darken($PINK, 5%);
-$SECONDARY: darken($BLUE, 5%);
+$mona-lisa-100: #ffe3e1;
+$mona-lisa-200: #ffcdc8;
+$mona-lisa-300: #ffa69e;
+$mona-lisa-400: #fd786c;
+$mona-lisa-500: #f54d3e;
+$mona-lisa-600: #e23020;
+$mona-lisa-700: #be2517;
 
-// cabecera y menu de catalogo
-$navbar-background: #FFF;
-$navbar-text: $MAIN;
+$solitaire-100: #f8eec9;
+$solitaire-200: #f3db95;
+$solitaire-300: #ebc259;
+$solitaire-400: #e4a82b;
+$solitaire-500: #d4921e;
+$solitaire-600: #b76f17;
+$solitaire-700: #925016;
+
+$cruise-100: #f1fcf9;
+$cruise-200: #b8f2e6;
+$cruise-300: #6adeca;
+$cruise-400: #3cc5b2;
+$cruise-500: #22aa99;
+$cruise-600: #19887d;
+$cruise-700: #186d65;
+
+$powder-blue-100: #e8f3f6;
+$powder-blue-200: #cce6eb;
+$powder-blue-300: #aed9e0;
+$powder-blue-400: #6bb9c5;
+$powder-blue-500: #48a2af;
+$powder-blue-600: #368493;
+$powder-blue-700: #2d6b77;
+
+$shuttle-gray-100: #eeeef0;
+$shuttle-gray-200: #d8dadf;
+$shuttle-gray-300: #b6bac3;
+$shuttle-gray-400: #8f96a1;
+$shuttle-gray-500: #717886;
+$shuttle-gray-600: #5e6472;
+$shuttle-gray-700: #4a4e5a;
+
+
+$primary: $mona-lisa-400;
+$secondary: $powder-blue-400;
+
 // cover
-$cover-background: $DARK-BLUE;
-$cover-title: $MAIN;
-$cover-text: #fff;
-$btnview: $MAIN;
-$btnview-hover: $SECONDARY;
-$btnview-text: #fff;
-$figures: $MAIN;
+// $cover-background: $DARK-BLUE;
+// $cover-title: $MAIN;
+// $cover-text: #fff;
+// $btnview: $MAIN;
+// $btnview-hover: $SECONDARY;
+// $btnview-text: #fff;
+// $figures: $MAIN;
 
-// card
-$card-img: $YELLOW;
-$card-text: darken($MAIN, 10%);
-$card-btn: $YELLOW;
+// // card
+// $card-img: $YELLOW;
+// $card-text: darken($MAIN, 10%);
+// $card-btn: $YELLOW;
 
-// ---------------------------------------------------------------
-// ESTILOS DEL SISTEMA PRINCIPAL
-// ---------------------------------------------------------------
+// // ---------------------------------------------------------------
+// // ESTILOS DEL SISTEMA PRINCIPAL
+// // ---------------------------------------------------------------
 
-// navbar
-$Snavbar-background: darken($DARK-BLUE, 20%);
-$Snavbar-color: $YELLOW;
+// // navbar
+// $Snavbar-background: darken($DARK-BLUE, 20%);
+// $Snavbar-color: $YELLOW;
 
-// header
-$header-background: #efefef;
-$header-text: $DARK-BLUE;
+// // header
+// $header-background: #efefef;
+// $header-text: $DARK-BLUE;

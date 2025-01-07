@@ -124,39 +124,34 @@ html {
 
 .main-header {
   position: sticky;
-  width: 100%;
-  height: 15vh;
+  height: 12vh;
   top: 0;
-  background-color: #FFF;
-  color: #ff8f85;
-  border-top: 1.5rem solid #ff8f85;
-  border-bottom: 1px solid #ff8f85;
+  background-color: #fff;
+  color: #fd786c;
+  border-top: 1rem solid #fd786c;
+  border-bottom: 1px solid #fd786c;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  z-index: 1000;
+  z-index: 10;
 }
 .main-header .logo {
-  font-size: 1.5em;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #89c8d2;
   display: flex;
-  border: 2px solid #9cd0d9;
+  border: 2px solid #6bb9c5;
 }
-.main-header .logo .first {
+.main-header .logo .left-side {
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
-  background-color: #9cd0d9;
+  background-color: #6bb9c5;
   padding: 0 0.4rem;
 }
-.main-header .logo .second {
+.main-header .logo .right-side {
   font-size: 1.5rem;
   font-weight: 500;
   font-family: "Times New Roman", Times, serif;
-  color: #ff8f85;
+  color: #fd786c;
   padding: 0 0.4rem;
 }
 .main-header .main-nav {
@@ -173,15 +168,16 @@ html {
   text-decoration: none;
   display: flex;
   align-items: center;
+  font-size: 1rem;
 }
 .main-header .main-nav a:hover {
-  background-color: #9cd0d9;
+  background-color: #6bb9c5;
   color: #fff;
 }
 .main-header .main-nav a i {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .main-header .main-nav .session {
-  background-color: #ff8f85;
+  background-color: #fd786c;
   color: #fff;
 }
