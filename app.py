@@ -19,14 +19,6 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-# def login_required(f):
-#     @wraps(f)
-#     def decorated_function(*args, **kwargs):
-#         if session.get("user_id") is None:
-#             return redirect("/login")
-#         return f(*args, **kwargs)
-#     return decorated_function
-
 def login_required(allowed_roles):
     def decorator(f):
         @wraps(f)
@@ -62,6 +54,8 @@ def no_cache(view):
 # !------------
 @app.route('/')
 def index():
+    if session.get('user_id'):
+        return abort(403)
     context = {
         'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
@@ -90,6 +84,9 @@ def registerClient():
     
     # SI EL METODO ES GET
     if request.method == 'GET':
+        if session.get('user_id'):
+            return redirect(url_for('catalog'))
+        
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
         }
@@ -123,6 +120,9 @@ def login():
     
     # SI EL METODO ES GET
     if request.method == 'GET':
+        if session.get('user_id'):
+            return redirect(url_for('catalog'))
+        
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('register')
         }
@@ -135,6 +135,7 @@ def login():
 
 @app.route('/catalog')
 def catalog():
+    
     context = {
         'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
@@ -146,6 +147,8 @@ def catalog():
 @login_required(["Cliente"])
 @no_cache
 def profile():
+    if session.get('user_id'):
+        return abort(403)
     context = {
         'current_page': currentPage('logout')
     }

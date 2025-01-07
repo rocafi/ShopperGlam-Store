@@ -20,19 +20,21 @@ $navbar-text: $primary;
     .logo {
         display: flex;
         border: 2px solid $secondary;
+        @mixin common-side{
+            padding: 0 .4rem;
+            font-size: 1.3rem;
+        }
         .left-side {
-            font-size: 1.5rem;
+            @include common-side;
             font-weight: 700;
             color: #fff;
             background-color: $secondary;
-            padding: 0 .4rem;
         }
         .right-side {
-            font-size: 1.5rem;
+            @include common-side;
             font-weight: 500;
             font-family: 'Times New Roman', Times, serif;
             color: $primary;
-            padding: 0 .4rem;
         }
       }
 
@@ -54,15 +56,16 @@ $navbar-text: $primary;
             &:hover {
                 background-color: $secondary;
                 color: #fff;
+                // margin-bottom: -2px;
+                // border-bottom: 2px solid $secondary;
             }
             
             i {
                 font-size: 1rem;
             }
         }
-        .session {
-            // border: 1px solid $SECONDARY;
-            background-color: $primary;
+        .btn-session {
+            background-color: $primary ;
             color: #fff;
           }
       }

@@ -1,5 +1,5 @@
-{% macro nav_link(href, icon, text) %}
-<a href="{{ href }}">
+{% macro nav_link(href, icon, text, extra) %}
+<a href="{{ href }}" {{ extra }}>
     <i class="material-symbols-outlined">{{ icon }}</i>
     {{ text }}
 </a>
