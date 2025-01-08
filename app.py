@@ -59,7 +59,7 @@ def index():
     context = {
         'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
-    return render_template('index.html', context=context)
+    return render_template('catalog/index.html', context=context)
 
 ##################################################################################################################
     # RUTAS DE REGISTRO E INICIO DE SESION
@@ -90,7 +90,6 @@ def registerClient():
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
         }
-        print(session)
         return render_template('auth/register.html', context=context)
     
 # TODO:------------------------------------------
@@ -112,7 +111,6 @@ def login():
         session['user_role'] = res['user'].user_role
         session['permissions'] = res['permissions']
 
-        print(session)
         if session.get('user_role') == 'Cliente':
             return redirect(url_for('catalog'))
         else:
@@ -126,7 +124,6 @@ def login():
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('register')
         }
-        print(session)
         return render_template('auth/login.html', context=context)
 
 ##################################################################################################################
@@ -140,7 +137,6 @@ def catalog():
     context = {
         'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
     }
-    print(session)
     return render_template('catalog/catalog.html', context=context)
 
 # perfil
@@ -154,7 +150,6 @@ def profile():
         'current_page': currentPage('logout')
     }
     
-    print(session)
     return render_template('catalog/profile.html', context=context)
 
 
