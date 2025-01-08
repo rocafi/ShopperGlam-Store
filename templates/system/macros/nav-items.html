@@ -1,0 +1,37 @@
+{% macro separator(label) %}
+<div class="separator">
+    <span class="title">{{ label }}</span>
+    <span class="line"></span>
+</div>
+{% endmacro %}
+
+{% macro nav_link(link, icon, name) %}
+        <li class="list-item">
+            <a href="{{ link }}" class="list-buttom">
+                <i class="material-symbols-outlined">{{ icon }}</i>
+                <span class="text">{{ name }}</span>
+            </a>
+        </li>
+{% endmacro %}
+
+{% macro nav_link_multi(link, icon, name, dropdown) %}
+        <li class="list-item">
+            <div class="list-buttom list-buttom--click">
+                <i class="material-symbols-outlined">{{ icon }}</i>
+                <span class="text">{{ name }}</span>
+                <i class="material-symbols-outlined arrow-list">{{ dropdown }}</i>
+            </div>
+            <ul class="list-show">
+                <li class="list-inside">
+                    <a href="{{ link }}">submenu</a>
+                </li>
+                <li class="list-inside">
+                    <a href="{{ link }}">submenu</a>
+                </li>
+                <li class="list-inside">
+                    <a href="{{ link }}">submenu</a>
+                </li>
+            </ul>
+        </li>
+
+{% endmacro %}

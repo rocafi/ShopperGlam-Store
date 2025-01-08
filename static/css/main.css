@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 *,
 *::before,
@@ -180,4 +181,156 @@ html {
 .main-header .main-nav .btn-session {
   background-color: #fd786c;
   color: #fff;
+}
+
+.separator {
+  margin: 1.7rem 0 0.8rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.separator .title {
+  width: 80%;
+  color: #925016;
+  font-size: 0.9rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 0.2rem;
+}
+.separator .line {
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: #925016;
+}
+
+.nav-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-section .list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.nav-section .list .list-item {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+.nav-section .list .list-item .list-buttom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+.nav-section .list .list-item .list-buttom .hide {
+  visibility: hidden;
+}
+.nav-section .list .list-item .list-buttom:hover {
+  background-color: #d4921e;
+  border-bottom: 1px solid #d4921e;
+  transform: scale(1.1);
+}
+.nav-section .list .list-item .list-buttom i {
+  font-size: 1rem;
+  width: 40%;
+  text-align: center;
+}
+.nav-section .list .list-item .list-buttom span {
+  font-size: 1rem;
+  width: 60%;
+}
+.nav-section .list .list-item .list-show {
+  height: 0;
+  opacity: 0; /* Para la transición de visibilidad */
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: height 0.3s ease, opacity 0.3s ease; /* Transición de altura y opacidad */
+}
+.nav-section .list .list-item .list-show .list-inside {
+  background-color: #d4921e;
+  border-bottom: 1px solid #925016;
+}
+.nav-section .list .list-item .list-show .list-inside a {
+  color: #d4921e;
+  padding: 0.4rem;
+  display: block;
+}
+.nav-section .list .list-item .arrow .list-show {
+  height: auto; /* Deja que el contenido defina la altura */
+  opacity: 1; /* Hace visible el submenú */
+}
+
+.config .nav-section {
+  border: 2px solid #d4921e;
+}
+.config .nav-section .list {
+  width: 100%;
+}
+
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  background-color: #925016;
+  color: #f8eec9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container div .nav-header {
+  height: 5rem;
+  border-bottom: 1px solid #f8eec9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.navbar-container div .nav-header .shopper {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #925016;
+  background-color: #f8eec9;
+  padding: 0 0.4rem;
+}
+.navbar-container div .nav-header .admin {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  color: #f8eec9;
+  padding: 0 0.4rem;
+}
+.navbar-container div .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container .config {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

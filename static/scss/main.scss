@@ -6,4 +6,11 @@
 // SCSS PARA COMPONENTES
 @use "../scss/utils/components/header";
 
+// SCSS SYSTEM MACROS
+@use "../scss/system/macros/nav-items";
+
+@use "../scss/system/utils/general_cmp/navbar";
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");

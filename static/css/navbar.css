@@ -1,0 +1,52 @@
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  background-color: #925016;
+  color: #f8eec9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container div .nav-header {
+  height: 5rem;
+  border-bottom: 1px solid #f8eec9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.navbar-container div .nav-header .shopper {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #925016;
+  background-color: #f8eec9;
+  padding: 0 0.4rem;
+}
+.navbar-container div .nav-header .admin {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  color: #f8eec9;
+  padding: 0 0.4rem;
+}
+.navbar-container div .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container .config {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

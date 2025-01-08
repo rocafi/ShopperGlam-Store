@@ -1,3 +1,44 @@
-<h1>navbar</h1>
+{% import "system/macros/nav-items.html" as macro %}
 
-<a href="/logout">salir</a>
+<nav class="navbar-container">
+    <div>
+        <header class="nav-header">
+            <span class="shopper">shopper</span>
+            <span class="admin">admin</span>
+        </header>
+    
+        <section class="menu">  
+        
+            <nav class="nav-section">
+                <ul class="list">
+                    
+                    {{ macro.nav_link("/manage_index", "home", "Inicio") }}    
+                    {{ macro.nav_link("/manage_dashboards", "dashboard", "Dashboard") }}    
+                    
+                    {{ macro.separator("Usuarios") }}
+                    {{ macro.nav_link("/manage_operators", "person", "Operadores") }} 
+                    {{ macro.nav_link("/manage_providers", "local_shipping", "Proveedores") }} 
+
+                    {{ macro.separator("Entradas") }}
+                    {{ macro.nav_link("/manage_buys", "local_mall", "Compras") }} 
+                    {{ macro.nav_link("/manage_products", "inventory", "Productos") }} 
+                    
+                    {{ macro.separator("Salidas") }}
+                    {{ macro.nav_link("/manage_sells", "paid", "Ventas") }} 
+                    {{ macro.nav_link("/manage_returns", "assignment_return", "Devoluciones") }} 
+                    {{ macro.nav_link("/manage_reserves", "bookmark", "Apartados") }} 
+                    
+                </ul>
+            </nav>
+        
+        </section> 
+    </div>
+    
+<footer class="config">
+    <nav class="nav-section">
+        <ul class="list">
+            {{ macro.nav_link("/manage_configuration", "manufacturing", "Configuration") }}    
+        </ul>
+    </nav>
+</footer>
+</nav>
