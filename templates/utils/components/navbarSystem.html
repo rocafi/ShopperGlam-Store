@@ -1,0 +1,42 @@
+<nav class="navbar-container">
+    <div>
+
+        <header class="nav-header">
+            <span class="shopper">shopper</span>
+            <span class="admin">admin</span>
+        </header>
+    
+        <section class="menu">  
+            <nav class="nav-section">
+                <ul class="list">
+                    {{ macroLinks.nav_link("/manage_index", "home", "Inicio") }}    
+                    {{ macroLinks.nav_link("/manage_dashboards", "dashboard", "Dashboard") }}    
+                    
+                    {{ macroLinks.separator("Usuarios") }}
+                    {{ macroLinks.nav_link("/manage_operators", "person", "Operadores") }} 
+                    {{ macroLinks.nav_link("/manage_providers", "local_shipping", "Proveedores") }} 
+
+                    {{ macroLinks.separator("Entradas") }}
+                    {{ macroLinks.nav_link("/manage_buys", "local_mall", "Compras") }} 
+                    {{ macroLinks.nav_link("/manage_products", "inventory", "Productos") }} 
+                    
+                    {{ macroLinks.separator("Salidas") }}
+                    {{ macroLinks.nav_link("/manage_sells", "paid", "Ventas") }} 
+                    {{ macroLinks.nav_link("/manage_returns", "assignment_return", "Devoluciones") }} 
+                    {{ macroLinks.nav_link("/manage_reserves", "bookmark", "Apartados") }} 
+                </ul>
+            </nav>
+        </section> 
+
+    </div>
+    
+<footer class="config">
+    <nav class="nav-section">
+        <ul class="list">
+            {{ macroLinks.nav_link("/manage_configuration", "manufacturing", "Configuration") }}    
+        </ul>
+    </nav>
+</footer>
+
+<a href="/logout">Exit</a>
+</nav>

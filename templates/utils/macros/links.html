@@ -1,3 +1,10 @@
+{% macro separator(label) %}
+<div class="separator">
+    <span class="title">{{ label }}</span>
+    <span class="line"></span>
+</div>
+{% endmacro %}
+
 {% macro nav_link(href, icon, text, extra) %}
 <a href="{{ href }}" {{ extra }}>
     <i class="material-symbols-outlined">{{ icon }}</i>

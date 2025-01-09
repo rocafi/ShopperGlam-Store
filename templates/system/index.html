@@ -1,5 +1,4 @@
 {% extends 'layout.html' %}
-{% set componentGeneral = "system/utils/general-cmp/" %}
 
 {% block main_title %}
     Pagina de inicio
@@ -8,16 +7,17 @@
 {% block main %}
 
     <body>
-
         <main class="main-body-system">
 
             <div class="main-nav">
-                {% include componentGeneral + "navbar.html" %}
+                {% include component + "navbarSystem.html" %}
             </div>
+
             <div class="main-body">
+
             </div>
+
         </main>
-        
     </body>
 
 {%- endblock -%}

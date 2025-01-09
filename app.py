@@ -31,7 +31,7 @@ def login_required(allowed_roles):
 
             # Verifica si el rol del usuario está permitido
             if user_role not in allowed_roles:
-                return abort(403)  # Prohibido
+                return abort(404)  # Prohibido
 
             return f(*args, **kwargs)
         return decorated_function
@@ -158,7 +158,7 @@ def profile():
 ##################################################################################################################
 
 @app.route('/home')
-# @login_required(["Operador"])
+@login_required(["Operador"])
 def home():
     return render_template('system/index.html')
 
