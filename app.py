@@ -7,7 +7,6 @@ from flask import make_response
 
 from src.entities.auth import *
 
-
 app = Flask(__name__)
 load_dotenv()
 
@@ -90,7 +89,7 @@ def registerClient():
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('login')
         }
-        return render_template('auth/register.html', context=context)
+        return render_template('catalog/auth/register.html', context=context)
     
 # TODO:------------------------------------------
 @app.route('/login', methods=['GET', 'POST'])
@@ -124,7 +123,7 @@ def login():
         context = {
             'current_page': currentPage('logout') if session.get('user_id') else currentPage('register')
         }
-        return render_template('auth/login.html', context=context)
+        return render_template('catalog/auth/login.html', context=context)
 
 ##################################################################################################################
     # RUTAS DEL CATALOGO
@@ -153,11 +152,6 @@ def profile():
     return render_template('catalog/profile.html', context=context)
 
 
-
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect("/")
 
 ##################################################################################################################
     # RUTAS DEL SISTEMA
@@ -207,6 +201,11 @@ def configurations():
 ##################################################################################################################
     # FUNCIONES DE UTILIDAD
 ##################################################################################################################
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
 
 def currentPage(route):
     routes = {

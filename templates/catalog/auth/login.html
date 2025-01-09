@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Iniciar Sesion
+{% endblock %}
+
+{% block main %}
+
+    {% include component + "headerCatalog.html" %}
+
+    <h1>Iniciar sesion</h1>
+    
+    <form class="form auth-user" action="/login" method="post">
+
+        {{ macroInput.inputSimple('Correo', 'email', 'email', 'ej. jhondoe@gmail.com', '', 'autofocus') }}    
+        {{ macroInput.inputSimple('Contraseña', 'password', 'password', '********', '') }}
+        
+        <span class="account">Obten mas funcionalidades <a href="/login">Registrate</a></span>
+
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="show-message alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        
+        <button id="btn_register">Enviar</button>
+    
+    </form>
+
+{% endblock %}

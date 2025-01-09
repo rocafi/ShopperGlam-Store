@@ -12,12 +12,20 @@
     <title>{%- block title %}{% endblock %}</title>
 </head>
 <body>
+    <!-- ESTABLECER LA LOCALIZACION DE COMPONENTES Y MACROS -->
+        <!-- COMPONENTES -->
+        {% set component = "utils/components/" %}
+     
+        <!-- MACROS -->
+        {% import "utils/macros/input.html" as macroInput %}
+
+    <!-- CONTENIDO PRINCIPAL -->
     {% block main %}{% endblock %}
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/socket.io.min.js"></script>
 
     <!-- MIS ARCHIVOS JS -->
     <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/static/js/socket.io.min.js"></script>
 </body>
 </html>

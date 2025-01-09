@@ -1,15 +1,24 @@
 @use "reset";
 
 // SCSS PARA MACROS
-@use "../scss/utils/macros/input";
+@use "utils/macros/input";
 
 // SCSS PARA COMPONENTES
-@use "../scss/utils/components/header";
+@use "utils/components/header";
 
-// SCSS SYSTEM MACROS
-@use "../scss/system/macros/nav-items";
+// SCSS PARA EL CATALOGO
+@use "catalog/auth/auth";
 
-@use "../scss/system/utils/general_cmp/navbar";
+// SCSS PARA EL SISTEMA
+
+
+// // SCSS PARA COMPONENTES
+// @use "../scss/utils/components/header";
+
+// // SCSS SYSTEM MACROS
+// @use "../scss/system/macros/nav-items";
+
+// @use "../scss/system/utils/general_cmp/navbar";
 
 
 

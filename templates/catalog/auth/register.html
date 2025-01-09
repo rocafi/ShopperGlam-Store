@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Registrarse
+{% endblock %}
+
+{% block main %}
+
+    {% include component + "headerCatalog.html" %}
+
+    <h1>Registro</h1>
+    
+    <form class="form auth-user" action="/register" method="post">
+        
+        {{ macroInput.inputSimple('Usuario', 'username', 'text', 'ej. Jhon Doe', '', '') }}    
+        {{ macroInput.inputSimple('Correo', 'email', 'email', 'ej. jhondoe@gmail.com', '', '')}}
+        {{ macroInput.inputSimple('Contraseña', 'password', 'password', '********') }}
+        
+        <span class="account">Tienes una cuenta? <a href="/login">Inicia sesión</a></span>
+
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="show-message alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+
+        <button id="btn_register">Enviar</button>
+    
+    </form>
+
+{% endblock %}
