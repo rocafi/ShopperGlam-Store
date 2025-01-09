@@ -1,21 +1,16 @@
 @use "/static/scss/variables.scss" as *;
 
-$background: $shuttle-gray-700;
-$scrollbar-color-first: $shuttle-gray-400;
-$scrollbar-color-second: $shuttle-gray-600;
-
 .main-body-system {
     display: flex;
     position: relative;
     .main-nav {
         width: 17%;
-        background-color: $background;
         height: 100vh;
         position: sticky;
         top: 0;
         overflow-x: hidden;
         overflow-y: scroll;
-        scrollbar-color: $scrollbar-color-first $scrollbar-color-second;
+        scrollbar-color: $scrollbar;
         scrollbar-width: thin;
 
     }

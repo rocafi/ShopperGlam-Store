@@ -2,7 +2,7 @@
 .navbar-container {
   width: 100%;
   height: 100%;
-  background-color: #4a4e5a;
+  background-color: #25262c;
   color: #f3db95;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
 .navbar-container div .nav-header .shopper {
   font-size: 1.3rem;
   font-weight: 700;
-  color: background;
+  color: #25262c;
   background-color: #f3db95;
   padding: 0 0.4rem;
 }
@@ -76,7 +76,7 @@
   visibility: hidden;
 }
 .navbar-container div .menu .nav-section .list .list-item .list-buttom:hover {
-  background-color: #4a4e5a;
+  background-color: #25262c;
   border-bottom: 1px solid #f3db95;
   transform: scale(1.1);
 }
@@ -101,7 +101,7 @@
   transition: height 0.3s ease, opacity 0.3s ease; /* Transición de altura y opacidad */
 }
 .navbar-container div .menu .nav-section .list .list-item .list-show .list-inside {
-  background-color: #4a4e5a;
+  background-color: #25262c;
   border-bottom: 1px solid #f3db95;
 }
 .navbar-container div .menu .nav-section .list .list-item .list-show .list-inside a {
