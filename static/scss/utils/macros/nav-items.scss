@@ -1,0 +1,26 @@
+@use "/static/scss/variables.scss" as *;
+
+$text-color: $solitaire-200;
+
+.separator{
+    margin: 1.7rem 0 .8rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title{
+        width: 80%;
+        color: $text-color;
+        font-size: .9rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        text-align: left;
+        margin-bottom: .2rem;
+    }
+    .line{
+        display: block;
+        width: 80%;
+        height: 1px;
+        background-color: $text-color;
+    }
+}

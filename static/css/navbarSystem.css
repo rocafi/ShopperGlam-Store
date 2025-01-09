@@ -1,0 +1,121 @@
+@charset "UTF-8";
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  background-color: #4a4e5a;
+  color: #f3db95;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container div .nav-header {
+  height: 5rem;
+  border-bottom: 1px solid #f3db95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.navbar-container div .nav-header .shopper {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: background;
+  background-color: #f3db95;
+  padding: 0 0.4rem;
+}
+.navbar-container div .nav-header .admin {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  color: #f3db95;
+  padding: 0 0.4rem;
+}
+.navbar-container div .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container div .menu .nav-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-container div .menu .nav-section .list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.navbar-container div .menu .nav-section .list .list-item {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+.navbar-container div .menu .nav-section .list .list-item .list-buttom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+.navbar-container div .menu .nav-section .list .list-item .list-buttom .hide {
+  visibility: hidden;
+}
+.navbar-container div .menu .nav-section .list .list-item .list-buttom:hover {
+  background-color: #4a4e5a;
+  border-bottom: 1px solid #f3db95;
+  transform: scale(1.1);
+}
+.navbar-container div .menu .nav-section .list .list-item .list-buttom i {
+  font-size: 1rem;
+  width: 40%;
+  text-align: center;
+}
+.navbar-container div .menu .nav-section .list .list-item .list-buttom span {
+  font-size: 1rem;
+  width: 60%;
+}
+.navbar-container div .menu .nav-section .list .list-item .list-show {
+  height: 0;
+  opacity: 0; /* Para la transición de visibilidad */
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: height 0.3s ease, opacity 0.3s ease; /* Transición de altura y opacidad */
+}
+.navbar-container div .menu .nav-section .list .list-item .list-show .list-inside {
+  background-color: #4a4e5a;
+  border-bottom: 1px solid #f3db95;
+}
+.navbar-container div .menu .nav-section .list .list-item .list-show .list-inside a {
+  color: rgba(243, 219, 149, 0.8);
+  padding: 0.4rem;
+  display: block;
+}
+.navbar-container div .menu .nav-section .list .list-item .arrow .list-show {
+  height: auto; /* Deja que el contenido defina la altura */
+  opacity: 1; /* Hace visible el submenú */
+}
+.navbar-container .config {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

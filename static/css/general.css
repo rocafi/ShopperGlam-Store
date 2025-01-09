@@ -1,0 +1,18 @@
+.main-body-system {
+  display: flex;
+  position: relative;
+}
+.main-body-system .main-nav {
+  width: 17%;
+  background-color: #4a4e5a;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-color: #8f96a1 #5e6472;
+  scrollbar-width: thin;
+}
+.main-body-system .main-body {
+  width: 83%;
+}

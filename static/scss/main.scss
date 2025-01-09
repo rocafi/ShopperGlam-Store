@@ -2,23 +2,20 @@
 
 // SCSS PARA MACROS
 @use "utils/macros/input";
+@use "utils/macros/nav-items";
 
 // SCSS PARA COMPONENTES
-@use "utils/components/header";
+@use "utils/components/headerCatalog";
+@use "utils/components/navbarSystem";
 
 // SCSS PARA EL CATALOGO
 @use "catalog/auth/auth";
 
 // SCSS PARA EL SISTEMA
+@use "system/general";
 
 
-// // SCSS PARA COMPONENTES
-// @use "../scss/utils/components/header";
 
-// // SCSS SYSTEM MACROS
-// @use "../scss/system/macros/nav-items";
-
-// @use "../scss/system/utils/general_cmp/navbar";
 
 
 

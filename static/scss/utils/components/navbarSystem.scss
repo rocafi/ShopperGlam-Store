@@ -1,0 +1,136 @@
+@use "/static/scss/variables.scss" as *;
+
+$background: $shuttle-gray-700;
+$text-color: $solitaire-200;
+
+.navbar-container{
+    width: 100%;
+    height: 100%;
+    background-color: $background;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .nav-header{
+            height: 5rem;
+            border-bottom: 1px solid $text-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            .shopper {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: background;
+                background-color: $text-color;
+                padding: 0 .4rem;
+            }
+            .admin {
+                font-size: 1.3rem;
+                font-weight: 500;
+                font-family: 'Times New Roman', Times, serif;
+                color: $text-color;
+                padding: 0 .4rem;
+            }
+        }
+        .menu{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .nav-section {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            
+                .list {
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .1rem;
+                    
+                    .list-item {
+                        width: 100%;
+                        display: block;
+                        overflow: hidden;
+                        
+                        .list-buttom {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: center;
+                            padding: .3rem 0;
+                            border-bottom: 1px solid transparent;
+                            cursor: pointer;
+                            
+                            .hide {
+                                visibility: hidden;
+                            }
+                            
+                            &:hover {
+                                background-color: $background;
+                                border-bottom: 1px solid $text-color;
+                                transform: scale(1.1);
+                                
+                            }
+                            i{
+                                font-size: 1rem;
+                                width: 40%;
+                                text-align: center;
+                            }
+                            span{
+                                font-size: 1rem;
+                                width: 60%;
+                            }
+                        }
+            
+                        .list-show {
+                            height: 0;
+                            opacity: 0; /* Para la transición de visibilidad */
+                            text-align: center;
+                            width: 80%;
+                            margin: 0 auto;
+                            display: flex;
+                            flex-direction: column;
+                            gap: .5rem;
+                            transition: height 0.3s ease, opacity 0.3s ease; /* Transición de altura y opacidad */
+            
+                            .list-inside {
+                                background-color: $background;
+                                border-bottom: 1px solid $text-color;
+            
+                                a {
+                                    color: rgba($text-color, 0.8);
+                                    padding: .4rem;
+                                    display: block;
+                                }
+                            }
+                        }
+            
+                        .arrow .list-show {
+                            height: auto; /* Deja que el contenido defina la altura */
+                            opacity: 1; /* Hace visible el submenú */
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .config{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
