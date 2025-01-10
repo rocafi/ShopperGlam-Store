@@ -283,7 +283,7 @@ html {
   visibility: hidden;
 }
 .navbar-container div .menu .nav-section .list .list-item .list-buttom:hover {
-  background-color: red;
+  background-color: #25262c;
   border-bottom: 1px solid #f3db95;
   transform: scale(1.1);
 }

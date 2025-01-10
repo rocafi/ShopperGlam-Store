@@ -1,0 +1,113 @@
+@use "/static/scss/variables.scss" as *;
+
+.main-cover {
+    background: linear-gradient(180deg, $background-cover);
+    height: 85vh;
+    padding: 4rem 6rem;
+    display: flex;
+    justify-content: space-around;
+    .left-side-cover {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+            color: $cover-title;
+            border-left:4px solid $cover-text;
+            padding: 0 0 1rem 2rem;
+            h1 {
+                font-size: 3rem;
+                font-weight: 800;
+            }
+            h2 {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+        }
+        .text {
+            padding: 1rem 0 1rem 2rem;
+            font-size: 1.3rem;
+            color: $cover-text;
+            border-left: 8px solid $cover-title;
+            padding-left: 2rem;
+            margin-left: -2px;
+        }
+        .btn-view-catalog {
+            display: flex;
+            margin-left: 2.5rem;
+            a {
+                background-color: $btnview;
+                color: $btnview-text;
+                padding: .2rem 1.8rem;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 1.4rem;
+                &:hover {
+                    background-color: darken($btnview-hover, 10%);
+                }
+            }
+        }
+    }
+    
+    .right-side-cover {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        margin: -4rem 0;
+        .columns {
+            width: 41%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+            div {
+                width: 100%;
+            }
+        }
+        .first {
+            .top {
+                aspect-ratio: 4/1;
+                background-color: $figures;
+            }
+            .middle {
+                aspect-ratio: 1/1;
+                border: 1rem solid $secondary;
+                // minimizar tamano backgound image
+                background-size: cover;
+                background-position: center;
+                background-image: url("https://cdn.pixabay.com/photo/2023/06/03/13/39/woman-8037727_1280.jpg");
+            }
+            .bottom {
+                aspect-ratio: 4/3;
+                background: repeating-linear-gradient(
+                            90deg,           /* Orientación horizontal */
+                            $figures,            /* Color de la línea */
+                            $figures 8px,        /* Ancho de la línea */
+                            transparent 8px, /* Espacio entre líneas */
+                            transparent 16px  /* Define el ciclo repetitivo */
+                            );
+                background-color: $background-cover; /* Color de fondo oscuro */
+            }
+        }
+        .second {
+            .top {
+                aspect-ratio: 4/3;
+                border: 1rem solid $figures;
+                border-top: none;
+            }
+            .middle {
+                aspect-ratio: 1/1;
+                border: 1rem solid $secondary;
+                // minimizar tamano backgound image
+                background-size: cover;
+                background-position: center;
+                background-image: url("https://cdn.pixabay.com/photo/2024/06/03/22/05/model-8807372_1280.png");
+            }
+            .bottom {
+                aspect-ratio: 4/1;
+                background-color: $figures;
+            }
+        }
+        
+    }
+}
