@@ -1,0 +1,27 @@
+<header class="secondary-header">
+
+    <button class="btn-notification">
+        <span class="material-symbols-outlined">
+            notifications
+        </span>
+    </button>
+
+    <div class="user-in-header">
+        <div class="user-menu">
+            <button>
+                <img src="https://st4.depositphotos.com/9998432/27191/v/1600/depositphotos_271917462-stock-illustration-person-gray-photo-placeholder-man.jpg"  alt="">
+            </button>
+            <div class="user-options">
+                    <a href="#">Perfil</a>
+                    <a href="#">Configuración</a>
+                    <a href="#">Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+</header> 
+
+<div class="info-header">
+   {{place}}  <span class="material-symbols-outlined">chevron_right</span> {{ detail}} {% if detail2 %}
+   <span class="material-symbols-outlined">chevron_right</span> {{ detail2 }}
+   {% endif %}
+</div>

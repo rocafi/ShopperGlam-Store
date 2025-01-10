@@ -3,7 +3,7 @@
 .navbar-container{
     width: 100%;
     height: 100%;
-    background-color: $background;
+    background-color: $background-nav-system;
     color: $text;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
             .shopper {
                 font-size: 1.3rem;
                 font-weight: 700;
-                color: $background;
+                color: $background-nav-system;
                 background-color: $text;
                 padding: 0 .4rem;
             }
@@ -76,7 +76,7 @@
                             }
                             
                             &:hover {
-                                background-color: $background;
+                                background-color: $background-nav-system;
                                 border-bottom: 1px solid $text;
                                 transform: scale(1.1);
                                 
@@ -104,7 +104,7 @@
                             transition: height 0.3s ease, opacity 0.3s ease; /* Transición de altura y opacidad */
             
                             .list-inside {
-                                background-color: $background;
+                                background-color: $background-nav-system;
                                 border-bottom: 1px solid $text;
             
                                 a {

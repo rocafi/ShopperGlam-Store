@@ -327,6 +327,59 @@ html {
   align-items: center;
 }
 
+.secondary-header {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #4a4e5a;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  background-color: #d8dadf;
+}
+.secondary-header .btn-notification {
+  display: grid;
+  place-items: center;
+}
+.secondary-header .btn-notification span {
+  font-size: 2rem;
+  color: #25262c;
+}
+.secondary-header .user-in-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.secondary-header .user-in-header span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.secondary-header .user-in-header .user-menu button {
+  width: 3rem;
+  aspect-ratio: 1/1;
+}
+.secondary-header .user-in-header .user-menu button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.secondary-header .user-in-header .user-menu .user-options {
+  display: none;
+}
+
+.info-header {
+  background-color: #dbdbdb;
+  height: 3rem;
+  position: sticky;
+  top: 5rem;
+  border-bottom: 1px solid #4a4e5a;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+}
+
 h1 {
   text-align: center;
   font-size: 2rem;
