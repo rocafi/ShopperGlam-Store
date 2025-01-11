@@ -16,7 +16,7 @@
   align-items: center;
 }
 .navbar-container div .nav-header {
-  height: 5rem;
+  height: 4rem;
   border-bottom: 1px solid #f3db95;
   display: flex;
   justify-content: center;

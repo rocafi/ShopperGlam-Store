@@ -11,3 +11,13 @@
     {{ text }}
 </a>
 {% endmacro %}
+
+{% macro sys_nav_link(link, icon, name) %}
+    <li class="list-item">
+        <a href="{{ link }}" class="list-buttom">
+            <i class="material-symbols-outlined">{{ icon }}</i>
+            <span class="text">{{ name }}</span>
+        </a>
+    </li>
+{% endmacro %}
+
