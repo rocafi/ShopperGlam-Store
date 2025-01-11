@@ -160,9 +160,14 @@ def profile():
 @app.route('/home')
 @login_required(["Operador"])
 def home():
-    return render_template('system/index.html')
+    url = {"page": "INICIO"}
+    context = {
+        "url": url
+    }
+    return render_template('system/index.html', context=context)
 
 @app.route('/dashboards')
+@login_required(["Operador"])
 def dashboard():
     return '<h1>Dashboard</h1>'
 
