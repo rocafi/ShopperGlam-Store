@@ -166,40 +166,44 @@ def home():
     }
     return render_template('system/index.html', context=context)
 
-@app.route('/dashboards')
+@app.route('/dashboard')
 @login_required(["Operador"])
 def dashboard():
-    return '<h1>Dashboard</h1>'
+    url = {"page": "INICIO", "title": "DASHBOARD"}
+    context = {
+        "url": url
+    }
+    return render_template('system/dashboard.html', context=context)
 
-@app.route('/operators')
+@app.route('/operator')
 def operators():
     return 'Operators'
 
-@app.route('/providers')
+@app.route('/provider')
 def providers():
     return 'Providers'
 
-@app.route('/sells')
+@app.route('/sell')
 def sells():
     return 'Sells'
 
-@app.route('/returns')
+@app.route('/return')
 def returns():
     return 'Returns'
 
-@app.route('/reservations')
+@app.route('/reservation')
 def reservations():
     return 'Reservations'
 
-@app.route('/buys')
+@app.route('/buy')
 def buys():
     return 'Buys'
 
-@app.route('/products')
+@app.route('/product')
 def products():
     return 'Products'
 
-@app.route('/configurations')
+@app.route('/configuration')
 def configurations():
     return 'Configurations'
 

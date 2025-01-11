@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block main_title %}
+    Dashboards
+{% endblock %}
+
+{% block main %}
+
+        <main class="main-body-system">
+
+            <div class="main-nav">
+                {% include component + "navbarSystem.html" %}
+            </div>
+
+            <div class="main-body">
+                {% include component + "headerSystem.html" %}
+            </div>
+
+        </main>
+
+{%- endblock -%}
